@@ -7,21 +7,15 @@
 //
 
 #import "ViewController.h"
-
-@interface ViewController ()
-
-@end
+#import "SampleView.h"
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    UIView *sampleView = [[SampleView alloc] init];
+    [self.view addSubview:sampleView];
 }
 
 @end
