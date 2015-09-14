@@ -34,37 +34,22 @@
     self.leftLabel.text = @"Left";
     self.leftLabel.backgroundColor = [UIColor greenColor];
     [self addSubview:self.leftLabel];
-
-    [self layoutLeftLabel];
-    [self layoutRightLabel];
-
-    // 1. autoresizingMask
-    self.leftLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
-    self.rightLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    // 2. manual layout
-//    [self layoutLeftLabel];
-//    [self layoutRightLabel];
+    [self layoutLabels];
 }
 
-- (void)layoutRightLabel {
+- (void)layoutLabels {
+    static CGFloat margin = 10.0f;
+    CGFloat viewHeight = CGRectGetHeight(self.frame);
+    CGSize leftLabelSize = [self.leftLabel sizeThatFits:CGSizeZero];
+    CGSize rightLabelSize = [self.rightLabel sizeThatFits:CGSizeZero];
 
-    CGFloat height = CGRectGetHeight(self.frame);
-
-    self.rightLabel.frame = CGRectMake(120.0f, height/2.0f, 100.0f, 100.0f);
-    [self.rightLabel sizeToFit];
-}
-
-- (void)layoutLeftLabel {
-
-    CGFloat height = CGRectGetHeight(self.frame);
-
-    self.leftLabel.frame = CGRectMake(10.0f, height/2.0f, 100.0f, 100.0f);
-    [self.leftLabel sizeToFit];
+    self.leftLabel.frame = (CGRect){{margin, viewHeight/2.0f}, leftLabelSize};
+    self.rightLabel.frame = (CGRect){{CGRectGetMaxX(self.leftLabel.frame) + margin, viewHeight/2.0f}, rightLabelSize};
 }
 
 @end
