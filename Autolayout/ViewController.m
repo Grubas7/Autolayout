@@ -14,7 +14,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    UIView *sampleView = [[SampleView alloc] init];
+    UIView *sampleView = [[SampleView alloc] initWithFrame:self.view.frame];
+    sampleView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:sampleView];
 }
 

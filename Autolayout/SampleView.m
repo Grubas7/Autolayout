@@ -1,7 +1,4 @@
 //
-//  OldView.m
-//  Autolayout
-//
 //  Created by Adam Grzegorowski on 14/09/15.
 //  Copyright © 2015 allegro. All rights reserved.
 //
@@ -38,23 +35,36 @@
     self.leftLabel.backgroundColor = [UIColor greenColor];
     [self addSubview:self.leftLabel];
 
-//    [self layoutLeftLabel];
-//    [self layoutRightLabel];
+    [self layoutLeftLabel];
+    [self layoutRightLabel];
+
+    // 1. autoresizingMask
+    self.leftLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
+    self.rightLabel.autoresizingMask = UIViewAutoresizingFlexibleTopMargin | UIViewAutoresizingFlexibleBottomMargin;
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
 
-    [self layoutLeftLabel];
-    [self layoutRightLabel];
+    // 2. manual layout
+//    [self layoutLeftLabel];
+//    [self layoutRightLabel];
 }
 
 - (void)layoutRightLabel {
-    self.rightLabel.frame = CGRectMake(10.0f, 300.0f, 100.0f, 100.0f);
+
+    CGFloat height = CGRectGetHeight(self.frame);
+
+    self.rightLabel.frame = CGRectMake(120.0f, height/2.0f, 100.0f, 100.0f);
+    [self.rightLabel sizeToFit];
 }
 
 - (void)layoutLeftLabel {
-    self.leftLabel.frame = CGRectMake(120.0f, 300.0f, 100.0f, 100.0f);
+
+    CGFloat height = CGRectGetHeight(self.frame);
+
+    self.leftLabel.frame = CGRectMake(10.0f, height/2.0f, 100.0f, 100.0f);
+    [self.leftLabel sizeToFit];
 }
 
 @end
