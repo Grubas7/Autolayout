@@ -300,6 +300,7 @@
 				739FF1601BA6E5C200EC5F27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
