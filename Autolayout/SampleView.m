@@ -42,10 +42,8 @@
 
 - (void)setUpConstraints {
 
-    NSLayoutConstraint *leftLabelCenterY = [self layoutConstraintCenterYForView:self.leftLabel];
-    NSLayoutConstraint *rightLabelCenterY = [self layoutConstraintCenterYForView:self.rightLabel];
-
-    [self addConstraints:@[ leftLabelCenterY, rightLabelCenterY ]];
+    [self addConstraints:[self layoutConstraintCenterYForView:self.leftLabel]];
+    [self addConstraints:[self layoutConstraintCenterYForView:self.rightLabel]];
 
     NSDictionary *views = @{ @"leftLabel" : self.leftLabel, @"rightLabel" : self.rightLabel };
     NSDictionary *metrics = @{ @"margin" : @10 };
@@ -57,14 +55,12 @@
     [self addConstraints:horizontalConstraints];
 }
 
-- (NSLayoutConstraint *)layoutConstraintCenterYForView:(UIView *)view {
-    return [NSLayoutConstraint constraintWithItem:view
-                                        attribute:NSLayoutAttributeCenterY
-                                        relatedBy:NSLayoutRelationEqual
-                                           toItem:self
-                                        attribute:NSLayoutAttributeCenterY
-                                       multiplier:1.0f
-                                         constant:0.0f];
+- (NSArray<__kindof NSLayoutConstraint *> *)layoutConstraintCenterYForView:(UIView *)view {
+
+    return [NSLayoutConstraint constraintsWithVisualFormat:@"H:[self]-(<=1)-[view]"
+                                                   options:NSLayoutFormatAlignAllCenterY
+                                                   metrics:nil
+                                                     views:NSDictionaryOfVariableBindings(self, view)];
 }
 
 @end
