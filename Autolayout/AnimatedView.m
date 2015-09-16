@@ -10,11 +10,11 @@
 
 @implementation AnimatedView
 
-- (CGSize)intrinsicContentSize {
-
-    CGFloat height = self.shouldBeExpanded ? 300.0f : 50.0f;
-
-    return CGSizeMake(UIViewNoIntrinsicMetric, height);
-}
+//- (CGSize)intrinsicContentSize {
+//
+//    CGFloat height = self.shouldBeExpanded ? 300.0f : 50.0f;
+//
+//    return CGSizeMake(UIViewNoIntrinsicMetric, height);
+//}
 
 @end

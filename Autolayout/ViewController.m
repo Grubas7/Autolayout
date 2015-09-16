@@ -11,6 +11,7 @@
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet AnimatedView *animatedView;
+@property (strong, nonatomic) IBOutlet NSLayoutConstraint *heightConstraint;
 @end
 
 @implementation ViewController
@@ -18,9 +19,10 @@
 - (IBAction)viewDidTap:(UITapGestureRecognizer *)sender {
     
     self.animatedView.shouldBeExpanded = !self.animatedView.shouldBeExpanded;
+    CGFloat height = self.animatedView.shouldBeExpanded ? 300.0f : 50.0f;
 
     [UIView animateWithDuration:1.0 animations:^{
-        [self.animatedView invalidateIntrinsicContentSize];
+        self.heightConstraint.constant = height;
         [self.view layoutIfNeeded];
     }];
 }
