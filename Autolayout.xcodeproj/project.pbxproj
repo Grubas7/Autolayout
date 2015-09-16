@@ -7,15 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		667828A11BA9FFC00025B36C /* AnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 667828A01BA9FFC00025B36C /* AnimatedView.m */; };
+		667828A31BAA02880025B36C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 667828A21BAA02880025B36C /* LaunchScreen.xib */; };
 		739FF14C1BA6E5C200EC5F27 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 739FF14B1BA6E5C200EC5F27 /* main.m */; };
 		739FF14F1BA6E5C200EC5F27 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 739FF14E1BA6E5C200EC5F27 /* AppDelegate.m */; };
 		739FF1521BA6E5C200EC5F27 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 739FF1511BA6E5C200EC5F27 /* ViewController.m */; };
 		739FF1551BA6E5C200EC5F27 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739FF1531BA6E5C200EC5F27 /* Main.storyboard */; };
 		739FF1571BA6E5C200EC5F27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 739FF1561BA6E5C200EC5F27 /* Assets.xcassets */; };
-		739FF15A1BA6E5C200EC5F27 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739FF1581BA6E5C200EC5F27 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6678289F1BA9FFC00025B36C /* AnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedView.h; sourceTree = "<group>"; };
+		667828A01BA9FFC00025B36C /* AnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedView.m; sourceTree = "<group>"; };
+		667828A21BAA02880025B36C /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		739FF1471BA6E5C200EC5F27 /* Autolayout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Autolayout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		739FF14B1BA6E5C200EC5F27 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		739FF14D1BA6E5C200EC5F27 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -24,7 +28,6 @@
 		739FF1511BA6E5C200EC5F27 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		739FF1541BA6E5C200EC5F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		739FF1561BA6E5C200EC5F27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		739FF1591BA6E5C200EC5F27 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		739FF15B1BA6E5C200EC5F27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,9 +65,11 @@
 				739FF14E1BA6E5C200EC5F27 /* AppDelegate.m */,
 				739FF1501BA6E5C200EC5F27 /* ViewController.h */,
 				739FF1511BA6E5C200EC5F27 /* ViewController.m */,
+				6678289F1BA9FFC00025B36C /* AnimatedView.h */,
+				667828A01BA9FFC00025B36C /* AnimatedView.m */,
 				739FF1531BA6E5C200EC5F27 /* Main.storyboard */,
 				739FF1561BA6E5C200EC5F27 /* Assets.xcassets */,
-				739FF1581BA6E5C200EC5F27 /* LaunchScreen.storyboard */,
+				667828A21BAA02880025B36C /* LaunchScreen.xib */,
 				739FF15B1BA6E5C200EC5F27 /* Info.plist */,
 				739FF14A1BA6E5C200EC5F27 /* Supporting Files */,
 			);
@@ -136,7 +141,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				739FF15A1BA6E5C200EC5F27 /* LaunchScreen.storyboard in Resources */,
+				667828A31BAA02880025B36C /* LaunchScreen.xib in Resources */,
 				739FF1571BA6E5C200EC5F27 /* Assets.xcassets in Resources */,
 				739FF1551BA6E5C200EC5F27 /* Main.storyboard in Resources */,
 			);
@@ -152,6 +157,7 @@
 				739FF1521BA6E5C200EC5F27 /* ViewController.m in Sources */,
 				739FF14F1BA6E5C200EC5F27 /* AppDelegate.m in Sources */,
 				739FF14C1BA6E5C200EC5F27 /* main.m in Sources */,
+				667828A11BA9FFC00025B36C /* AnimatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -164,14 +170,6 @@
 				739FF1541BA6E5C200EC5F27 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		739FF1581BA6E5C200EC5F27 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				739FF1591BA6E5C200EC5F27 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -264,6 +262,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Autolayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allegro.Autolayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -275,6 +274,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Autolayout/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.allegro.Autolayout;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -300,6 +300,7 @@
 				739FF1601BA6E5C200EC5F27 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

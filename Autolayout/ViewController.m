@@ -7,21 +7,22 @@
 //
 
 #import "ViewController.h"
+#import "AnimatedView.h"
 
 @interface ViewController ()
-
+@property (weak, nonatomic) IBOutlet AnimatedView *animatedView;
 @end
 
 @implementation ViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
-}
+- (IBAction)viewDidTap:(UITapGestureRecognizer *)sender {
+    
+    self.animatedView.shouldBeExpanded = !self.animatedView.shouldBeExpanded;
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    [UIView animateWithDuration:1.0 animations:^{
+        [self.animatedView invalidateIntrinsicContentSize];
+        [self.view layoutIfNeeded];
+    }];
 }
 
 @end
