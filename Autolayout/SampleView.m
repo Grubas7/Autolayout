@@ -4,6 +4,7 @@
 //
 
 #import "SampleView.h"
+#import <Masonry/Masonry.h>
 
 @interface SampleView ()
 
@@ -35,56 +36,24 @@
     self.leftLabel = [[UILabel alloc] init];
     self.leftLabel.text = NSLocalizedString(@"Left", nil);
     self.leftLabel.backgroundColor = [UIColor greenColor];
-    self.leftLabel.translatesAutoresizingMaskIntoConstraints = NO;
     [self addSubview:self.leftLabel];
 }
 
 - (void)setUpConstraints {
 
     CGFloat margin = 10.0f;
-    NSLayoutConstraint *leftLabelCenterY = [NSLayoutConstraint constraintWithItem:self.leftLabel
-                                                                        attribute:NSLayoutAttributeCenterY
-                                                                        relatedBy:NSLayoutRelationEqual
-                                                                           toItem:self
-                                                                        attribute:NSLayoutAttributeCenterY
-                                                                       multiplier:1.0f
-                                                                         constant:0.0f];
 
-    NSLayoutConstraint *leftLabelMinX = [NSLayoutConstraint constraintWithItem:self.leftLabel
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                     relatedBy:NSLayoutRelationEqual
-                                                                        toItem:self
-                                                                     attribute:NSLayoutAttributeLeading
-                                                                    multiplier:1.0f
-                                                                      constant:margin];
+    [self mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.centerY.equalTo(self.leftLabel.mas_centerY);
+        make.centerY.equalTo(self.rightLabel.mas_centerY);
 
-    [self addConstraints:@[ leftLabelCenterY, leftLabelMinX ]];
+        make.leading.equalTo(self.leftLabel.mas_leading).with.offset(-margin);
+        make.trailing.equalTo(self.rightLabel.mas_trailing).with.offset(margin);
+    }];
 
-    NSLayoutConstraint *rightLabelCenterY = [NSLayoutConstraint constraintWithItem:self.rightLabel
-                                                                         attribute:NSLayoutAttributeCenterY
-                                                                         relatedBy:NSLayoutRelationEqual
-                                                                            toItem:self
-                                                                         attribute:NSLayoutAttributeCenterY
-                                                                        multiplier:1.0f
-                                                                          constant:0.0f];
-
-    NSLayoutConstraint *rightLabelMinX = [NSLayoutConstraint constraintWithItem:self.rightLabel
-                                                                      attribute:NSLayoutAttributeLeading
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:self.leftLabel
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                     multiplier:1.0f
-                                                                       constant:margin];
-
-    NSLayoutConstraint *rightLabelMaxX = [NSLayoutConstraint constraintWithItem:self.rightLabel
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                      relatedBy:NSLayoutRelationEqual
-                                                                         toItem:self
-                                                                      attribute:NSLayoutAttributeTrailing
-                                                                     multiplier:1.0f
-                                                                       constant:-margin];
-    
-    [self addConstraints:@[ rightLabelCenterY, rightLabelMinX, rightLabelMaxX ]];
+    [self.leftLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.trailing.equalTo(self.rightLabel.mas_leading).with.offset(-margin);
+    }];
 }
 
 @end
