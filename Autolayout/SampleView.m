@@ -42,25 +42,14 @@
 
 - (void)setUpConstraints {
 
-    [self addConstraints:[self layoutConstraintCenterYForView:self.leftLabel]];
-    [self addConstraints:[self layoutConstraintCenterYForView:self.rightLabel]];
+    CGFloat margin = 10.0f;
 
-    NSDictionary *views = @{ @"leftLabel" : self.leftLabel, @"rightLabel" : self.rightLabel };
-    NSDictionary *metrics = @{ @"margin" : @10 };
-    NSArray *horizontalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-(margin)-[leftLabel]-(margin)-[rightLabel]-(margin)-|"
-                                                                             options:NSLayoutFormatDirectionLeadingToTrailing
-                                                                             metrics:metrics
-                                                                               views:views];
+    [self.leftLabel.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:margin].active = YES;
+    [self.leftLabel.trailingAnchor constraintEqualToAnchor:self.rightLabel.leadingAnchor constant:-margin].active = YES;
+    [self.rightLabel.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-margin].active = YES;
 
-    [self addConstraints:horizontalConstraints];
-}
-
-- (NSArray<__kindof NSLayoutConstraint *> *)layoutConstraintCenterYForView:(UIView *)view {
-
-    return [NSLayoutConstraint constraintsWithVisualFormat:@"H:[self]-(<=1)-[view]"
-                                                   options:NSLayoutFormatAlignAllCenterY
-                                                   metrics:nil
-                                                     views:NSDictionaryOfVariableBindings(self, view)];
+    [self.leftLabel.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
+    [self.rightLabel.centerYAnchor constraintEqualToAnchor:self.centerYAnchor].active = YES;
 }
 
 @end
